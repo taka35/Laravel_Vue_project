@@ -1,4 +1,4 @@
-FROM node:14.2-alpine as node
+FROM node:14.2-alpine
 
 ENV TZ Asia/tokyo
 
@@ -10,3 +10,5 @@ COPY --from=node /usr/local/lib /usr/local/lib
 COPY --from=node /opt /opt
 
 WORKDIR /app
+
+CMD ["/bin/ash"]
