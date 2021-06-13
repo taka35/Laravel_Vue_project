@@ -1,1 +1,1 @@
-# Laravel_Vue_project
+# fricom
