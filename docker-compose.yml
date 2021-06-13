@@ -1,0 +1,19 @@
+#docker-compose.ymlのバージョン
+version: '3.8'
+volumes:
+  docker-volume:
+
+#webサーバー、アプリケーション、DBコンテナの設定
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+#     networks:
+#       - sample-spa
+
+# networks:
+#   sample-spa:
+#     external: true
