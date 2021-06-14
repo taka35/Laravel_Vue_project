@@ -13,3 +13,6 @@ ps:
 # webコンテナに入る
 web:
 	docker-compose exec web ash
+# yarn dev
+yarn dev:
+	docker-compose exec web yarn dev
