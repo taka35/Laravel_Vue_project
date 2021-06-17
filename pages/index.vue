@@ -3,6 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">fricom_front</h1>
+      <h2>{{ data }}</h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -27,8 +28,19 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// import Logo from '~/components/Logo.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  // components: {
+  //   Logo
+  // },
+  async asyncData({ app }) {
+    const data = await app.$axios.$get('http://localhost:8000/api')
+    return {
+      data
+    }
+  }
+})
 </script>
 
 <style>
